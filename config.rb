@@ -107,7 +107,7 @@ registry_entries_csv = File.expand_path("data/registry_entries.csv", __dir__)
 registry_entries = ApiCatalogue.from_urls(registry_entries_csv)
 api_catalogue = ApiCatalogue.merge([static, registry_entries])
 bulk_metadata_response = V1AlphaProvider.retrieve_all([registry_entries])
-File.write("source/apis", bulk_metadata_response)
+File.write("source/apis.json", bulk_metadata_response)
 
 # Order organisations from A-Z in the Table of Contents,
 # leaving a buffer from 0-999 for static content to be given priority
