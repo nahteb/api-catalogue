@@ -155,6 +155,7 @@ proxy(
 
 page "/apis", content_type: "application/vnd.uk.gov.api.v1alpha+json"
 
+
 after_build do |builder|
   apis = File.join(config[:source], "apis")
   builder.thor.source_paths << File.dirname(__FILE__)
